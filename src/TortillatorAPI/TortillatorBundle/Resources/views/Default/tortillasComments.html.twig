@@ -1,0 +1,17 @@
+<h1>List of Comments</h1>
+<table border="1">
+    <tr>
+        <th>Id Tortilla</th>
+        <th>Username</th>
+        <th>Date</th>
+        <th>Text</th>
+    </tr>
+    {% for comment in comments %}
+    <tr>
+        <td>{{comment.idTortilla}}</td>
+        <td>{{comment.user}}</td>
+        <td>{{comment.datetime |date("Y-m-d H:i:s")}}</td>
+        <td>{{comment.text}}</td>
+    </tr>
+    {% endfor %}
+</table>

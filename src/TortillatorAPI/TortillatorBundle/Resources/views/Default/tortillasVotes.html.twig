@@ -1,0 +1,17 @@
+<h1>List of Votes</h1>
+<table border="1">
+    <tr>
+        <th>Id Tortilla</th>
+        <th>Username</th>
+        <th>Rating</th>
+        <th>Date</th>
+    </tr>
+    {% for vote in votes %}
+    <tr>
+        <td>{{vote.idTortilla}}</td>
+        <td>{{vote.user}}</td>
+        <td>{{vote.rating}}</td>
+        <td>{{vote.datetime |date("Y-m-d H:i:s")}}</td>
+    </tr>
+    {% endfor %}
+</table>

@@ -1,0 +1,19 @@
+<h1>List of Tortillas</h1>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Price</th>
+        <th>Average</th>
+        <th>Image</th>
+        <th>Id_bar</th>
+    </tr>
+    {% for tortilla in tortillas %}
+    <tr>
+        <td>{{tortilla.id}}</td>
+        <td>{{tortilla.price}}</td>
+        <td>{{tortilla.average}}</td>
+        <td>{{tortilla.image}}</td>
+        <td>{{tortilla.id_bar}}</td>
+    </tr>
+    {% endfor %}
+</table>

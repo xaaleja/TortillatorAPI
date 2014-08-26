@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+
+    <parameters>
+        <parameter key="tortillator_api.user.handler.class">TortillatorAPI\TortillatorBundle\Handler\UserHandler</parameter>
+        <parameter key="tortillator_api.user.class">TortillatorAPI\TortillatorBundle\Entity\User</parameter>
+        <parameter key="tortillator_api.bar.handler.class">TortillatorAPI\TortillatorBundle\Handler\BarHandler</parameter>
+        <parameter key="tortillator_api.bar.class">TortillatorAPI\TortillatorBundle\Entity\Bar</parameter>
+        <parameter key="tortillator_api.tortilla.handler.class">TortillatorAPI\TortillatorBundle\Handler\TortillaHandler</parameter>
+        <parameter key="tortillator_api.tortilla.class">TortillatorAPI\TortillatorBundle\Entity\Tortilla</parameter>
+        <parameter key="tortillator_api.votes.handler.class">TortillatorAPI\TortillatorBundle\Handler\VotesHandler</parameter>
+        <parameter key="tortillator_api.votes.class">TortillatorAPI\TortillatorBundle\Entity\Votes</parameter>
+        <parameter key="tortillator_api.comments.handler.class">TortillatorAPI\TortillatorBundle\Handler\CommentsHandler</parameter>
+        <parameter key="tortillator_api.comments.class">TortillatorAPI\TortillatorBundle\Entity\Comments</parameter>
+    </parameters>
+
+    <services>
+        <service id="tortillator_api.user.handler" class="%tortillator_api.user.handler.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument>%tortillator_api.user.class%</argument>
+            <argument type="service" id="form.factory"></argument>
+        </service>
+        <service id="tortillator_api.bar.handler" class="%tortillator_api.bar.handler.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument>%tortillator_api.bar.class%</argument>
+            <argument type="service" id="form.factory"></argument>
+        </service>
+        <service id="tortillator_api.tortilla.handler" class="%tortillator_api.tortilla.handler.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument>%tortillator_api.tortilla.class%</argument>
+            <argument type="service" id="form.factory"></argument>
+        </service>
+        <service id="tortillator_api.votes.handler" class="%tortillator_api.votes.handler.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument>%tortillator_api.votes.class%</argument>
+            <argument type="service" id="form.factory"></argument>
+        </service>
+        <service id="tortillator_api.comments.handler" class="%tortillator_api.comments.handler.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument>%tortillator_api.comments.class%</argument>
+            <argument type="service" id="form.factory"></argument>
+        </service>
+    </services>
+
+</container>

@@ -1,0 +1,18 @@
+{% block content %}
+    <h1 class="title">{{ 'user.list'|trans({}, 'TortillatorAPITortillatorBundle') }}</h1>
+
+    <ul id="user-list">
+        {% for user in users %}
+            <li>
+                <a href="{{ path('api_1_get_user', {'username': user.username}) }}">{{ user.password }}</a>
+                {#[<a href="{{ path('api_1_edit_users', {'username': user.username}) }}">{{ 'user.edit.link'|trans({}, 'TortillatorAPITortillatorBundle') }}</a>]#}
+                {#[<a href="{{ path('api_1_remove_users', {'username': user.username}) }}">{{ 'user.remove.link'|trans({}, 'TortillatorAPITortillatorBundle') }}</a>]#}
+            </li>
+        {% else %}
+            <li>{{ 'user.list.empty'|trans({}, 'TortillatorAPITortillatorBundle') }}</li>
+        {% endfor %}
+    </ul>
+    <p>
+        <a href="{{ path('api_1_new_user') }}">{{ 'user.new.link'|trans({}, 'TortillatorAPITortillatorBundle') }}</a>
+    </p>
+{% endblock %}

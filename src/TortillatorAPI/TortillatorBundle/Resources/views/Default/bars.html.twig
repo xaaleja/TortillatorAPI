@@ -1,0 +1,25 @@
+<h1>List of Bars</h1>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Province</th>
+        <th>Address</th>
+        <th>Schedule</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+    </tr>
+    {% for bar in bars %}
+    <tr>
+        <td>{{bar.id}}</td>
+        <td>{{bar.name}}</td>
+        <td>{{bar.city}}</td>
+        <td>{{bar.province}}</td>
+        <td>{{bar.address}}</td>
+        <td>{{bar.schedule}}</td>
+        <td>{{bar.latitude}}</td>
+        <td>{{bar.longitude}}</td>
+    </tr>
+    {% endfor %}
+</table>

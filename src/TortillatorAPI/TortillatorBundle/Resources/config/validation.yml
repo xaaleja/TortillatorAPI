@@ -1,0 +1,10 @@
+TortillatorAPI\TortillatorBundle\Entity\User:
+    properties:
+        password:
+            - NotBlank: ~
+            - NotNull: ~
+            - Length:
+                min: 1
+                max: 12
+                minMessage: "Your pass must be at least  characters length"
+                maxMessage: "Your pass cannot be longer than  characters length"

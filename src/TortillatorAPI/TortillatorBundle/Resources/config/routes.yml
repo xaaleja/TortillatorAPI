@@ -1,0 +1,25 @@
+tortillator_api_User:
+    type: rest
+    prefix: /v1
+    resource: "TortillatorAPI\TortillatorBundle\Controller\UserController"
+    name_prefix:  api_1_ # naming collision
+tortillator_api_Bar:
+    type: rest
+    prefix: /v1
+    resource: "TortillatorAPI\TortillatorBundle\Controller\BarController"
+    name_prefix:  api_1_ # naming collision
+tortillator_api_Tortilla:
+    type: rest
+    prefix: /v1
+    resource: "TortillatorAPI\TortillatorBundle\Controller\TortillaController"
+    name_prefix:  api_1_ # naming collision
+tortillator_api_Votes:
+    type: rest
+    prefix: /v1
+    resource: "TortillatorAPI\TortillatorBundle\Controller\VotesController"
+    name_prefix:  api_1_ # naming collision
+tortillator_api_Comments:
+    type: rest
+    prefix: /v1
+    resource: "TortillatorAPI\TortillatorBundle\Controller\CommentsController"
+    name_prefix:  api_1_ # naming collision

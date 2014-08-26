@@ -1,0 +1,30 @@
+tortillator_api_tortillator_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: TortillatorAPITortillatorBundle:Default:index }
+tortillas:
+    pattern: /tortillas
+    defaults: { _controller: TortillatorAPITortillatorBundle:Tortilla:getAllTortillas }
+tortilla:
+    pattern: /tortilla/{id}
+    defaults: { _controller: TortillatorAPITortillatorBundle:Tortilla:getTortilla }
+bars:
+    pattern: /bars
+    defaults: { _controller: TortillatorAPITortillatorBundle:Bar:getAllBars }
+bar:
+    pattern: /bar/{id}
+    defaults: { _controller: TortillatorAPITortillatorBundle:Bar:getBar }
+users:
+    pattern: /users
+    defaults: { _controller: TortillatorAPITortillatorBundle:Default:getUsers}
+user:
+    pattern: /user/{username}
+    defaults: { _controller: TortillatorAPITortillatorBundle:Default:getUser}
+tortillas_votes:
+    pattern: /tortillasVotes/{id}
+    defaults: { _controller: TortillatorAPITortillatorBundle:Tortilla:getTortillasVotes}
+tortillas_comments:
+    pattern: /tortillasComments/{id}
+    defaults: { _controller: TortillatorAPITortillatorBundle:Tortilla:getTortillasComments}
+new_user:
+    pattern: /new_user
+    defaults: { _controller:TortillatorAPITortillatorBundle:Default:newUser}
