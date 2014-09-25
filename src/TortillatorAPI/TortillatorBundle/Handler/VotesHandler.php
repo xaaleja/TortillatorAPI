@@ -41,6 +41,10 @@ class VotesHandler implements VotesHandlerInterface
         return $this->repository->findNumVotesTortilla($idTortilla);
     }
 
+    public function getTortillasVotes($id)
+    {
+        return $this->repository->findByIdTortilla($id);
+    }
 
     /**
      * Create a new Vote.

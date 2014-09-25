@@ -17,6 +17,12 @@ interface VotesHandlerInterface
      */
     public function get($slug);
 
+    public function getNumVotes($idTortilla);
+
+
+    public function getTortillasVotes($id);
+
+
     /**
      * Get a list of Votes.
      *

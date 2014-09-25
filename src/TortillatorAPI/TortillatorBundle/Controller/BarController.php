@@ -80,6 +80,11 @@ class BarController  extends FOSRestController
         return $bars;
     }
 
+    public function getBarBySlugAction($slug)
+    {
+        $bar = $this->container->get('tortillator_api.bar.handler')->getBarBySlug($slug);
+        return $bar;
+    }
 
     /**
      * Create a Bar from the submitted data.

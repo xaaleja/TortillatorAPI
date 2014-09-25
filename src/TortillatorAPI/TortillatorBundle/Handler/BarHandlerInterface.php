@@ -17,6 +17,12 @@ interface BarHandlerInterface
      */
     public function get($id);
 
+    public function getByLatLong($lat, $long);
+
+
+    public function getBarBySlug($slug);
+
+
     /**
      * Get a list of Bars.
      *

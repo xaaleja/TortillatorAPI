@@ -80,6 +80,13 @@ class VotesController extends FOSRestController
         return $num;
     }
 
+    public function getVotesTortillasAction($id)
+    {
+        $tortillas = $this->container->get('tortillator_api.votes.handler')->getTortillasVotes($id);
+
+        return $tortillas;
+    }
+
     /**
      * Create a Vote from the submitted data.
      *

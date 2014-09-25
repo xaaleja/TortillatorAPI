@@ -36,6 +36,14 @@ class Bar implements BarInterface
     /**
      * @var string
      *
+     * @ORM\Column(name="slug", type="string", length=40)
+     */
+    private $slug;
+
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="city", type="string", length=40)
      */
     private $city;
@@ -75,6 +83,11 @@ class Bar implements BarInterface
      */
     private $longitude;
 
+    public function __construct()
+    {
+        $this->slug = trim($this->name);
+    }
+
     /**
      * Set id
      *
@@ -107,6 +120,7 @@ class Bar implements BarInterface
     public function setName($name)
     {
         $this->name = $name;
+        $this->setSlug(trim($this->name));
 
         return $this;
     }
@@ -119,6 +133,29 @@ class Bar implements BarInterface
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Bar
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 
     /**

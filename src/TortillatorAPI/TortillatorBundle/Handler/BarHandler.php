@@ -41,6 +41,11 @@ class BarHandler implements BarHandlerInterface
         return $this->repository->findBarsNearLocation($lat, $long);
     }
 
+    public function getBarBySlug($slug)
+    {
+        return $this->repository->findOneBySlug($slug);
+    }
+
     /**
      * Create a new Bar.
      *

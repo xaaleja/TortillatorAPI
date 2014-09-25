@@ -35,6 +35,21 @@ Interface BarInterface
     public function getName();
 
     /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return BarInterface
+     */
+    public function setSlug($slug);
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug();
+
+    /**
      * Set city
      *
      * @param string $city
