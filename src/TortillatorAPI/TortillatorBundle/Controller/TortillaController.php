@@ -90,8 +90,9 @@ class TortillaController extends FOSRestController
 
     public function getTortillaRecommendationsAction($username)
     {
-        $tortillas = $this->container->get('tortillator_api.tortilla.handler')->getRecommendations($username);
-
+        if (!$tortillas = $this->container->get('tortillator_api.tortilla.handler')->getRecommendations($username)) {
+            throw new NotFoundHttpException(sprintf('The resource \'%s\' was not found.',$username));
+        }
         return $tortillas;
     }
 
