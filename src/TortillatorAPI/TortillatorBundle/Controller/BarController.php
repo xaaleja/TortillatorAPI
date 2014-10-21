@@ -72,10 +72,28 @@ class BarController  extends FOSRestController
 
     public function getBarLatitudeLongitudeAction($lat, $long)
     {
-        /*if (!($bar = $this->container->get('tortillator_api.bar.handler')->getByLatLong($lat, $long))) {
-            throw new NotFoundHttpException(sprintf('The resource \'%s\' was not found.',$lat, $long));
-        }*/
-        $bars = $this->container->get('tortillator_api.bar.handler')->getByLatLong($lat, $long);
+        if (!($bars = $this->container->get('tortillator_api.bar.handler')->getByLatLong($lat, $long))) {
+            throw new NotFoundHttpException(sprintf('The resource \'%s\' was not found.',$lat));
+        }
+        //$bars = $this->container->get('tortillator_api.bar.handler')->getByLatLong($lat, $long);
+
+        return $bars;
+    }
+
+    public function getBarRecommendationsAction($username, $lat, $long)
+    {
+        if (!($bars = $this->container->get('tortillator_api.bar.handler')->getRecommendationsByLatLong($username, $lat, $long))) {
+            throw new NotFoundHttpException(sprintf('The resource \'%s\' was not found.',$lat));
+        }
+
+        return $bars;
+    }
+
+    public function getBarVotedAction($username, $lat, $long)
+    {
+        if (!($bars = $this->container->get('tortillator_api.bar.handler')->getVotesByLatLong($username, $lat, $long))) {
+            throw new NotFoundHttpException(sprintf('The resource \'%s\' was not found.',$lat));
+        }
 
         return $bars;
     }

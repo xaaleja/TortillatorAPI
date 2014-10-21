@@ -18,6 +18,9 @@ interface BarHandlerInterface
     public function get($id);
 
     public function getByLatLong($lat, $long);
+    public function getRecommendationsByLatLong($username, $lat, $long);
+    public function getVotesByLatLong($username, $lat, $long);
+
 
 
     public function getBarBySlug($slug);

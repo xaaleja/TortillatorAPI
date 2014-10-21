@@ -46,6 +46,15 @@ class BarHandler implements BarHandlerInterface
         return $this->repository->findOneBySlug($slug);
     }
 
+    public function getRecommendationsByLatLong($username, $lat, $long)
+    {
+        return $this->repository->findRecommendedBarsNearLocation($username, $lat, $long);
+    }
+
+    public function getVotesByLatLong($username, $lat, $long)
+    {
+        return $this->repository->findVotedBarsNearLocation($username, $lat, $long);
+    }
     /**
      * Create a new Bar.
      *
