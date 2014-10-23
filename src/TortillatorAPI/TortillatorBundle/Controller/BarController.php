@@ -80,7 +80,7 @@ class BarController  extends FOSRestController
         return $bars;
     }
 
-    public function getBarRecommendationsAction($username, $lat, $long)
+    public function getBarRecommendationsLatitudeLongitudeAction($username, $lat, $long)
     {
         if (!($bars = $this->container->get('tortillator_api.bar.handler')->getRecommendationsByLatLong($username, $lat, $long))) {
             throw new NotFoundHttpException(sprintf('The resource \'%s\' was not found.',$lat));
@@ -89,7 +89,7 @@ class BarController  extends FOSRestController
         return $bars;
     }
 
-    public function getBarVotedAction($username, $lat, $long)
+    public function getBarVotedLatitudeLongitudeAction($username, $lat, $long)
     {
         if (!($bars = $this->container->get('tortillator_api.bar.handler')->getVotesByLatLong($username, $lat, $long))) {
             throw new NotFoundHttpException(sprintf('The resource \'%s\' was not found.',$lat));
