@@ -2,3 +2,4 @@ tortillator_api_tortillator:
     type: rest
     prefix: /api
     resource: "@TortillatorAPITortillatorBundle/Resources/config/routes.yml"
+    defaults: {_format: json}
